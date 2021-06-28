@@ -25,13 +25,14 @@ public class FindMaximum {
 	}
 
 	/** 
-	 * Ability to take values by variables which are Wrapper class Integer Type  
+	 * Method to find Maximum Using Generic
+	 * Ability to take values by variables which are Wrapper class Type  
 	 * To find the maximum of values using compareTo method
 	 * Prints the maximum value
 	 * @param x, y, z
 	 */
-	private static void getMaximum(Integer x, Integer y, Integer z) {
-		Integer max=x;//Initializing the Variable
+	private static <T extends Comparable> void getMaximum(T x, T y, T z) {
+		T max=x;//Initializing the Variable
 		if (y.compareTo(x)>0) {
 			max=y;
 		}
@@ -41,37 +42,4 @@ public class FindMaximum {
 		System.out.println("Maximum of "+x+", "+y+", "+z+" is "+max);//Printing the max value
 	}
 	
-	/** 
-	 * Ability to take values by variables which are Wrapper class Float Type  
-	 * To find the maximum of values using compareTo method
-	 * Prints the maximum value
-	 * @param x, y, z
-	 */
-	private static void getMaximum(Float x, Float y, Float z) {
-		Float max=x;//Initializing the Variable
-		if (y.compareTo(x)>0) {
-			max=y;
-		}
-		if (z.compareTo(max)>0) {
-			max=z;
-		}
-		System.out.println("Maximum of "+x+", "+y+", "+z+" is "+max);//Printing the max value
-	}
-	
-	/** 
-	 * Ability to take words by variables which are Wrapper class String Type  
-	 * To find the highest word(dictionary words) using compareTo method
-	 * Prints the maximum value
-	 * @param x, y, z
-	 */
-	private static void getMaximum(String x, String y, String z) {
-		String max=x;//Initializing the Variable
-		if (y.compareTo(x)>0) {
-			max=y;
-		}
-		if (z.compareTo(max)>0) {
-			max=z;
-		}
-		System.out.println("Maximum of "+x+", "+y+", "+z+" is "+max);//Printing the max value
-	}
 }
