@@ -17,9 +17,11 @@ public class FindMaximum {
 		// Initializing the Variables
 		Integer a=22, b=48, c=32;
 		Float l=33.48f, m=68.76f, n=45.72f;
+		String p="apple",q="peach",r="banana";
 		// Calling method to mind maximum
 		getMaximum(a,b,c);
 		getMaximum(l,m,n);
+		getMaximum(p,q,r);
 	}
 
 	/** 
@@ -56,4 +58,20 @@ public class FindMaximum {
 		System.out.println("Maximum of "+x+", "+y+", "+z+" is "+max);//Printing the max value
 	}
 	
+	/** 
+	 * Ability to take words by variables which are Wrapper class String Type  
+	 * To find the highest word(dictionary words) using compareTo method
+	 * Prints the maximum value
+	 * @param x, y, z
+	 */
+	private static void getMaximum(String x, String y, String z) {
+		String max=x;//Initializing the Variable
+		if (y.compareTo(x)>0) {
+			max=y;
+		}
+		if (z.compareTo(max)>0) {
+			max=z;
+		}
+		System.out.println("Maximum of "+x+", "+y+", "+z+" is "+max);//Printing the max value
+	}
 }
