@@ -6,16 +6,14 @@ package com.FindMaximum;
  * Variables are of Wrapper Class Integer, Double and String type
  */
 public class FindMaximum<T extends Comparable<T>> {
-	private T firstValue, secondValue, thirdValue;
+	private T[] inputArray;
 	
-	public FindMaximum(T firstInput, T secondInput, T thirdInput) {
-		this.firstValue = firstInput;
-		this.secondValue = secondInput;
-		this.thirdValue = thirdInput;
+	public FindMaximum(T[] inputArray) {
+		this.inputArray = inputArray;
 	}
 	
 	public T getMaximum() {
-		return FindMaximum.getMaximum(firstValue, secondValue, thirdValue);
+		return FindMaximum.getMaximum(this.inputArray);
 	}
 
 	/** 
@@ -26,21 +24,24 @@ public class FindMaximum<T extends Comparable<T>> {
 	 * @param x, y, z
 	 * @return 
 	 */
-	private static <T extends Comparable<T>> T getMaximum(T x, T y, T z) {
-		T max=x;//Initializing the Variable
-		if (y.compareTo(x)>0) {
-			max=y;
+	private static <T extends Comparable<T>> T getMaximum(T[] inputArray) {
+		T max=inputArray[0];//Initializing the Variable
+		for(T element : inputArray) {
+			if (element.compareTo(max)>0) {
+			max=element;
+			}
 		}
-		if (z.compareTo(max)>0) {
-			max=z;
-		}
-		printOut(x, y, z, max);
+		printOut(inputArray, max);
 		return max;
 	}
 	
-	private static <T> void printOut(T i, T j, T k, T big) {
+	private static <T> void printOut(T[] array,T big) {
+		System.out.print("Maximum of ");
+		for(T element : array) {
+			System.out.printf("%s  ", element);
+		}
 		//Printing the max value
-		System.out.printf("Maximum of %s, %s and %s is %s\n",i,j,k,big);
+		System.out.printf("is %s\n",big);
 	}
 
 	/**
@@ -51,13 +52,13 @@ public class FindMaximum<T extends Comparable<T>> {
 		//To display Welcome Message
 		System.out.println("Program To find the Maximum among different values");
 		// Initializing the Variables
-		Integer a=22, b=48, c=32;
-		Float l=33.48f, m=68.76f, n=45.72f;
-		String p="apple",q="peach",r="banana";
+		Integer[] intArray = {48,55,89,78,92,48,56,35};
+		Float[] floatArray = {48.5f,55.56f,89.48f,48.84f,48.89f,56.55f,35.48f};
+		String[] stringArray = {"apple","peach","banana","pinapple","orange"};
 		// Calling method to mind maximum
-		new FindMaximum(a,b,c).getMaximum();
-		new FindMaximum(l,m,n).getMaximum();
-		new FindMaximum(p,q,r).getMaximum();
+		new FindMaximum(intArray).getMaximum();
+		new FindMaximum(floatArray).getMaximum();
+		new FindMaximum(stringArray).getMaximum();
 	}
 	
 }
