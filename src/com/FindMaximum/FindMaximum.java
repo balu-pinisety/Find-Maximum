@@ -6,23 +6,24 @@ package com.FindMaximum;
  * Variables are of Wrapper Class Integer, Double and String type
  */
 public class FindMaximum<T extends Comparable<T>> {
+	//Instance Variable for Generic array
 	private T[] inputArray;
-	
+	//Constructor
 	public FindMaximum(T[] inputArray) {
 		this.inputArray = inputArray;
 	}
-	
+	//Calling method to find Maximum Value 
 	public T getMaximum() {
 		return FindMaximum.getMaximum(this.inputArray);
 	}
 
 	/** 
 	 * Method to find Maximum Using Generic
-	 * Ability to take values by variables which are Wrapper class Type  
+	 * Ability to take values by variables from array which are Wrapper class Type  
 	 * To find the maximum of values using compareTo method
 	 * Prints the maximum value
-	 * @param x, y, z
-	 * @return 
+	 * @param <T>, inputArray
+	 * @return max
 	 */
 	private static <T extends Comparable<T>> T getMaximum(T[] inputArray) {
 		T max=inputArray[0];//Initializing the Variable
@@ -35,6 +36,11 @@ public class FindMaximum<T extends Comparable<T>> {
 		return max;
 	}
 	
+	/**
+	 * To print all the values using array
+	 * to print the max value
+	 * @param <T>, array, big
+	 */
 	private static <T> void printOut(T[] array,T big) {
 		System.out.print("Maximum of ");
 		for(T element : array) {
@@ -45,8 +51,8 @@ public class FindMaximum<T extends Comparable<T>> {
 	}
 
 	/**
-	 * To assign the values to Wrapper class type Variables 
-	 * Calling method to find the maximum using parameters
+	 * To assign the values to Wrapper class type Array 
+	 * Calling method to find the maximum using array
 	 */
 	public static void main(String[] args) {
 		//To display Welcome Message
